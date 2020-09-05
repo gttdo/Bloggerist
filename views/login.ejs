@@ -1,0 +1,54 @@
+<%- include('layouts/header'); -%>
+
+<body>
+
+  <%- include('layouts/navbar'); -%>
+
+  <!-- Page Header -->
+  <header class="masthead" style="">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Login</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <!-- Form Begin -->
+        <form action="/users/login" method="POST" enctype="multipart/form-data">
+          <!-- Username -->
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Username</label>
+              <input type="text" class="form-control" placeholder="Username" id="username" name="username">
+            </div>
+          </div>
+          <!-- Password-->
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Password</label>
+              <input type="password" class="form-control" placeholder="password" id="password" name="password">
+            </div>
+          </div>
+          <br>
+          <div id="success"></div>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Login</button>
+        </form>
+        <!-- Form End -->
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <%- include('layouts/footer'); -%>
+  <%- include('layouts/scripts'); -%>
+</body>
+</html>
