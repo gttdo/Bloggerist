@@ -15,6 +15,11 @@ const fileUpload = require('express-fileupload');
 // Express Sessions
 const expressSession = require('express-session');
 
+/* Connect Flash - provides a special area of the session used for storing messages.
+    Messages can be written to this area and cleared after being displayed to the user.
+*/
+const flash = require('connect-flash');
+
 // Custom Middleware declaration
 const validateMiddleware = require('./middleware/validateMiddleware');
 const authMiddleware = require('./middleware/authMiddleware');
@@ -48,6 +53,7 @@ app.use("*", (req, res, next) => {
     loggedIn = req.session.userId;
     next()
 });
+app.use(flash());
 
 app.set('view engine', 'ejs')
 mongoose.connect('mongodb://localhost/my_database', {userNewUrlParser: true})
