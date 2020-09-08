@@ -56,7 +56,14 @@ app.use("*", (req, res, next) => {
 app.use(flash());
 
 app.set('view engine', 'ejs')
-mongoose.connect('mongodb://localhost/my_database', {userNewUrlParser: true})
+
+/***  Database connection ***/
+// Localhost connection
+// mongoose.connect('mongodb://localhost/my_database', {userNewUrlParser: true})
+
+// MongoDB Atlas connection
+mongoose.connect('mongodb+srv://gvinces:032089305sis.l@cluster0.ksllb.mongodb.net/my_database', {userNewUrlParser: true})
+
 
 app.get('/', homeController)
 
